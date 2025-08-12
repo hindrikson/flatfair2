@@ -39,4 +39,11 @@ class ProjectsController < ApplicationController
     params.expect(project: [:name])
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    flash[:notice] = "Project deleted successfully"
+    redirect_to projects_path
+  end
+
 end
