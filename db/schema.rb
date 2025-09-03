@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_08_05_134646) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_03_133543) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -18,6 +18,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_05_134646) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "active", default: true, null: false
   end
 
   create_table "todos", force: :cascade do |t|
@@ -25,5 +26,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_08_05_134646) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "completed", default: false, null: false
+    t.integer "priority", default: 1, null: false
   end
 end
