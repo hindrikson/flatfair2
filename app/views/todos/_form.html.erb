@@ -22,6 +22,30 @@
   </div>
 
   <div>
+    <%= form.label :completed, style: "display: block" %>
+    <%= form.check_box :completed %>
+  </div>
+
+  <div>
+    <%= form.label :priority, style: "display: block" %>
+    <%= form.number_field :priority %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, "Assigned User", style: "display: block" %>
+    <%= form.collection_select :user_id, User.all, :id, :name, 
+                              { prompt: "Select a user (optional)" }
+                              %>
+  </div>
+
+  <div>
+    <%= form.label :project_id, "Project", style: "display: block" %>
+    <%= form.collection_select :project_id, Project.all, :id, :name, 
+                              { prompt: "Select project (optional)" }
+                              %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>

@@ -2,6 +2,8 @@
 
 - Continue from: https://www.youtube.com/watch?v=n0TPEsKE9v0
 
+- [ ] Add a migration to include assignee to todos.
+
 - Podman postgres container
     To run a postgres image:
 
@@ -10,7 +12,7 @@
     set the password:
     xport DATABASE_PASSWORD=1234
 
-    podman run -d \                                                                                                                              [15:59:48]
+    podman run -d \
       --name postgres-dev \
       -e POSTGRES_PASSWORD=1234 \
       -e POSTGRES_USER=postgres \
